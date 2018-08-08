@@ -11,6 +11,7 @@ function saludar(req,res) {
 
 function importar(req,res) {
 	console.log(chalk.cyan("indexController: importar();"));
+	console.log(chalk.yellow(config["archivo"]));
 
 	const archivoBody = fs.readFileSync(config["archivo"]).toString();
 	console.log(archivoBody);
@@ -32,20 +33,23 @@ function importar(req,res) {
 		method: 'POST',
 		url: 'https://api.sendinblue.com/v3/contacts/import',
 		body: { 
-			listIds: [76],
+			listIds: [config["idlista"]],
 			fileBody: archivoBody 
 		},
 		json: true
 	};
 
 	request(options, function (error, response, body) {
+		console.log(chalk.yellow("Fin carga de archivo "+ config["archivo"]));
+
 		if (error) {
 			console.log(chalk.red(error));
 		    res.json({result:false,error:error});
 		} else {
-			console.log(chalk.cyan(body));
-		    res.json({result:true,body:body});
+			console.log(chalk.cyan(body.toString()));
+		    res.json({result:true,mensajes:"Fin carga de archivo "+config["archivo"],body:body});
 		}
+
 	});
 
 }

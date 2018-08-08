@@ -1,5 +1,5 @@
-
 module.exports = {
+    'idlista': ,
     'api-key': '',
-    'archivo': 'public/emails.csv'
+    'archivo': 'public/csv/xao.csv',
 };
