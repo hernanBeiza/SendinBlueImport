@@ -1,7 +1,6 @@
 //Importar los módulos requeridos
 var express = require('express');
 var cors = require('cors');
-var session = require('express-session');
 
 //config
 var config = require("./config");
@@ -12,13 +11,6 @@ var indexController = require ("./../controllers/indexController");
 module.exports = function(app){
 
 	app.use(cors());
-
-	app.use(session({
-	    secret: "hiperactivo2016",
-	    resave: true,
-	    saveUninitialized: true
-	}));
-
 	
 	app.all('/', function(req, res, next) {
 		res.header('Access-Control-Allow-Origin', '*');
@@ -49,5 +41,6 @@ module.exports = function(app){
 	});
 	
 	app.get("/",indexController.saludar);
-	app.post("/importar",indexController.importar);
+	app.post("/importarArchivo",indexController.importarArchivo);
+	app.post("/importarCarpeta",indexController.importarCarpeta);
 };

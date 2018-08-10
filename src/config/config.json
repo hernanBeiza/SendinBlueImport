@@ -1,0 +1,32 @@
+{ 
+  "test": {
+    "port": 3306,
+    "host": "",
+    "user": "",
+    "pass": "",
+    "db": "",
+    "permiso": "http://",
+    "server": "http://",
+    "api": "http://"
+  },
+  "development": {
+    "port": 3306,
+    "host": "",
+    "user": "",
+    "pass": "",
+    "db": "",
+    "permiso": "http://",
+    "server": "http://",
+    "api": "http://"
+  }, 
+  "production": {
+    "port": 3306,
+    "host": "",
+    "user": "",
+    "pass": "",
+    "db": "",
+    "permiso": "http://",
+    "server": "http://",
+    "api": "http://"
+  }
+}

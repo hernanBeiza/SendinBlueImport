@@ -1,5 +1,6 @@
 module.exports = {
     'idlista': ,
     'api-key': '',
-    'archivo': 'public/csv/xao.csv',
+    'archivo': 'public/csv/.csv',
+    'carpeta': 'public/csv/'
 };
